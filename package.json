@@ -1,0 +1,31 @@
+{
+  "name": "jenkins-metrics-web",
+  "version": "0.0.1",
+  "description": "Visualises jenkins-metrics-collector results from a RethinkDB.",
+  "main": "lib/app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [
+    "jenkins",
+    "metrics"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TOPdesk/jenkins-metrics-web"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.4.0",
+    "config": "^1.20.3",
+    "jade": "^1.11.0",
+    "koa": "^1.2.0",
+    "koa-router": "^5.4.0",
+    "koa-static": "^2.0.0",
+    "koa-views": "^4.1.0",
+    "rethinkdb": "^2.3.1"
+  },
+  "devDependencies": {
+    "config": "^1.20.4"
+  }
+}

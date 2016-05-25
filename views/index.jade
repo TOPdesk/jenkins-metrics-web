@@ -1,0 +1,15 @@
+mixin render(job)
+  li(data-job="#{job}") #{job}
+
+doctype html
+head
+  script(src="/vendor/jquery-2.2.4.min.js")
+  script(src="/javascript/client.js")
+  link(rel="stylesheet", type="text/css", href="/stylesheet/default.css")
+body
+  p #{new Date()}
+  div#list
+    ul
+      each job in jobs
+        +render(job)
+  div#content
