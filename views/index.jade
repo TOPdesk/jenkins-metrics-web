@@ -1,15 +1,15 @@
-mixin render(job)
-  li(data-job="#{job}") #{job}
+include mixins/dependencies
 
 doctype html
 head
-  script(src="/vendor/jquery-2.2.4.min.js")
-  script(src="/javascript/client.js")
-  link(rel="stylesheet", type="text/css", href="/stylesheet/default.css")
+  +javascriptLibraries
+  +styles
 body
   p #{new Date()}
-  div#list
-    ul
-      each job in jobs
-        +render(job)
-  div#content
+  table
+    tr
+      td#list
+        ul
+          each job in jobs
+            li(data-job="#{job}") #{job}
+      td#content
