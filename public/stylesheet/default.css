@@ -1,3 +1,38 @@
 #list {
+    max-width: 300px;
     float: left;
+}
+
+#content {
+    vertical-align: top;
+    width: 100%;
+}
+
+.epoch {
+    height: 200px;
+}
+
+.row {
+    width: 100%;
+    display: table;
+}
+
+.chart-column {
+    display: table-cell;
+    width: 100%;
+}
+
+.data-column {
+    min-width: 300px;
+    display: table-cell;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.increasing {
+    color: red;
+}
+
+.decreasing {
+    color: green;
 }
