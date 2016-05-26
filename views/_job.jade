@@ -1,4 +1,8 @@
 h1 #{name}
+
+include _execution-times
+
 ul
   each build in builds
     li #{build.id} #{build.duration} #{build.result}
+

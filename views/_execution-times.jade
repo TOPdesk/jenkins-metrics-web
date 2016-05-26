@@ -1,0 +1,21 @@
+include mixins/scripts
+
+h3 Execution time (Successful and Unstable builds)
+div.row
+  div.chart-column
+    div.epoch#execution-time
+  div.data-column
+    table
+      tr
+        td Initial average (#{statistics.executionTime.initialBatchLimitPercent}%)
+        td#execution-time-initial-average
+      tr
+        td Current average (#{statistics.executionTime.currentBatchLimitPercent}%)
+        td#execution-time-current-average
+      tr
+        td Change
+        td#execution-time-change
+
++disposableScript
+  include scripts/execution-times.js
+  | getData('#{name}');
