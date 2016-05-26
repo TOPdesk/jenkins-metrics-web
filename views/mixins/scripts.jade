@@ -1,0 +1,10 @@
+mixin disposableScript
+  div.disposable
+    script
+      | (function(){
+      |    function run() {
+      block
+      |      $('.disposable').remove();
+      |    }
+      |   $(document).ready(run);
+      | })();
