@@ -4,6 +4,9 @@ h1 #{name}
 div#build-times.chart-container
   +replaceContent('#build-times', '/' + name + '/charts/buildtimes')
 
+div#build-results.chart-container
+  +replaceContent('#build-results', '/' + name + '/charts/buildresults')
+
 //ul
 //  each build in builds
 //    li #{build.id} #{build.duration} #{build.result}

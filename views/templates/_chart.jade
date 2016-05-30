@@ -1,6 +1,7 @@
 include ../mixins/scripts
 
-canvas.chart(id="#{jobName}-#{metric}-chart", height=300)
+canvas.chart(id="#{jobName}-#{metric}-chart",class="#{metric}")
+block additionalData
 +onDocumentReady
   | var chart = !{JSON.stringify(chart)};
   block chartCustomization
