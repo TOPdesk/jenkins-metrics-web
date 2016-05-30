@@ -1,6 +1,8 @@
-h1 #{name}
+include mixins/scripts
 
-include _execution-times
+h1 #{name}
+div#build-times
+  +replaceContent('#build-times', '/' + name + '/charts/buildtimes')
 
 ul
   each build in builds

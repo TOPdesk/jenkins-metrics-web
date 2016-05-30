@@ -1,0 +1,5 @@
+extends ./_chart
+
+block chartCustomization
+  +millisecsToTimeString
+  | chart.options.scales.yAxes[0].ticks.callback = millisecsToTimeString;
