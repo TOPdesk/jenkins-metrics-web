@@ -25,7 +25,7 @@ function getData(jobName) {
     var current = executionTimes.averages.currentExecutionTime;
     var diff = current - initial;
     $('#execution-time').epoch({
-      type: 'line',
+      type: 'bar',
       data: executionTimes.chartData,
       tickFormats: formats
     });

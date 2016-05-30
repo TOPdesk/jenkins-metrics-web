@@ -15,7 +15,7 @@
     });
   }
 
-  function handleHashChange(event) {
+  function handleHashChange() {
     if (window.location.hash.substr(0, 2) === '#!') {
       selectJob(window.location.hash.substr(2));
     }
