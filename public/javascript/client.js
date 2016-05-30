@@ -6,12 +6,17 @@
   }
 
   function selectJob(job) {
+    var content = $('#content');
+    var jobs = $('#jobs');
     $.get('/' + job, function completed(result) {
       window.location.hash = '#!' + job;
-      $('#content').html(result);
+      content.html(result);
+      jobs.find('li').removeClass('active');
+      jobs.find('li[data-job="' + job + '"]').addClass('active');
     }).fail(function failed() {
+      jobs.find('li').removeClass('active');
       console.error('Failed to load', job);
-      $('#content').html('ERROR');
+      content.html('ERROR');
     });
   }
 
