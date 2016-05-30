@@ -17,7 +17,6 @@
 
   function handleHashChange(event) {
     if (window.location.hash.substr(0, 2) === '#!') {
-      event.stopPropagation();
       selectJob(window.location.hash.substr(2));
     }
   }
