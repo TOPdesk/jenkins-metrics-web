@@ -1,7 +1,7 @@
 include mixins/scripts
 
 h1 #{name}
-div#build-times
+div#build-times.chart-container
   +replaceContent('#build-times', '/' + name + '/charts/buildtimes')
 
 ul

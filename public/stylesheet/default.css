@@ -1,28 +1,33 @@
-#list {
-    max-width: 300px;
-    float: left;
+body {
+    margin: 0;
+    padding: 0;
 }
 
-#content {
-    vertical-align: top;
-    width: 100%;
+.container {
+    margin: 0;
+    padding: 0;
 }
 
 .row {
-    width: 100%;
-    display: table;
+  display: table-row;
 }
 
-.chart-column {
+.left {
     display: table-cell;
-    width: 100%;
+    max-width: 350px;
 }
 
-.data-column {
-    min-width: 300px;
+.right {
     display: table-cell;
     vertical-align: top;
-    white-space: nowrap;
+    width: 100%;
+    padding-right: 1em;
+}
+
+.chart-container {
+    min-height: 300px;
+    display: block;
+    width: auto;
 }
 
 .increasing {

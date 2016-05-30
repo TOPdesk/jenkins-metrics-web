@@ -5,11 +5,10 @@ head
   +javascriptLibraries
   +styles
 body
-  p #{new Date()}
-  table
-    tr
-      td#list
+  div.container
+    div.row
+      div#jobs.left
         ul
           each job in jobs
             li(data-job="#{job}") #{job}
-      td#content
+      div#content.right

@@ -1,8 +1,7 @@
 include ../mixins/scripts
 
-div.chart-container
-  canvas.chart(id="#{jobName}-#{metric}-chart", height=300)
-  +onDocumentReady
-    | var chart = !{JSON.stringify(chart)};
-    block chartCustomization
-    | new Chart($('##{jobName}-#{metric}-chart'), chart);
+canvas.chart(id="#{jobName}-#{metric}-chart", height=300)
++onDocumentReady
+  | var chart = !{JSON.stringify(chart)};
+  block chartCustomization
+  | new Chart($('##{jobName}-#{metric}-chart'), chart);

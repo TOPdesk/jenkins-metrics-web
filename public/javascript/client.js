@@ -22,7 +22,7 @@
   }
 
   $(document).ready(function addJobClickListeners() {
-    $('#list')
+    $('#jobs')
       .find('[data-job]')
       .click(select);
   });
