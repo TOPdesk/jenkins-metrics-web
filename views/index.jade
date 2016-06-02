@@ -8,8 +8,9 @@ body
   +chartGlobals
   div.container
     div.row
-      div#jobs.left
-        ul
-          each job in jobs
-            li(data-job="#{job}") #{job}
-      div#content.right
+      aside#jobs.left
+        nav
+          ul
+            each job in jobs
+              li(data-job="#{job}") #{job}
+      main#content.right

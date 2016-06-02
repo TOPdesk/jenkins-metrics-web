@@ -1,16 +1,21 @@
 include mixins/scripts
 
-h1 #{name}
-div#build-times.chart-container
+header
+  h1
+    button prev
+    | #{name}
+    button next
+
+section#build-times.chart-container
   +replaceContent('#build-times', '/' + name + '/charts/buildtimes')
 
-div#build-results.chart-container
+section#build-results.chart-container
   +replaceContent('#build-results', '/' + name + '/charts/buildresults')
 
-div#earliest-build-results.chart-container
+section#earliest-build-results.chart-container
   +replaceContent('#earliest-build-results', '/' + name + '/charts/earliestbuildresults')
 
-div#latest-build-results.chart-container
+section#latest-build-results.chart-container
   +replaceContent('#latest-build-results', '/' + name + '/charts/latestbuildresults')
 
 //ul
