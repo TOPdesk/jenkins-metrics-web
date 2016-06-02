@@ -17,5 +17,5 @@ body
         ul
           each job in jobs
             li(data-job="#{job}")
-              a(href="#!#{job}") #{job}
+              a(name="!#{job}" href="#!#{job}") #{job}
     main#content.right
