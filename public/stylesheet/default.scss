@@ -20,6 +20,11 @@ $SILVER: #bdc3c7;
 $CONCRETE: #95a5a6;
 $ASBESTOS: #7f8c8d;
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -31,16 +36,23 @@ body {
 .container {
   margin: 0;
   padding: 0;
-}
-
-.row {
-  display: table-row;
+  height: 100%;
 }
 
 .left {
-  display: table-cell;
-  max-width: 350px;
+  width: 350px;
+  height: 100%;
+  overflow-x: hidden;
+  float: left;
 }
+
+.right {
+  width: auto;
+  vertical-align: top;
+  padding: 0 1em;
+  overflow: hidden;
+}
+
 
 h1 {
   span {
@@ -55,18 +67,61 @@ h1 {
 }
 
 #jobs {
+  background-color: $MIDNIGHT_BLUE;
+  &.collapsed {
+    width: 42px;
+    overflow-y: visible;
+    button#jobs-collapse {
+      display: none;
+    }
+    text-align: center;
+    ul {
+      display: none;
+    }
+    header {
+      width: 37px;
+    }
+  }
+  &.expanded {
+    button#jobs-expand {
+      display: none;
+    }
+  }
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    width: 345px;
+    height: 32px;
+    padding: 8px 5px 8px 0;
+    background-color: $GREEN_SEA;
+    text-align: right;
+    vertical-align: middle;
+    button {
+      width: 32px;
+      height: 32px;
+      border: 0;
+      padding :0;
+      margin: 0;
+      color: $SILVER;
+      background-color: $GREEN_SEA;
+      span {
+        font-size: 24px;
+        line-height: 24px;
+      }
+    }
+  }
   ul {
-    padding: 0;
+    padding: 48px 0 0;
     margin: -2px 0;
     color: $CLOUDS;
-    background-color: $MIDNIGHT_BLUE;
     li {
       background-color: $WET_ASPHALT;
-      margin: 2px 0;
-      padding: .5em;
       list-style: none;
       cursor: pointer;
       overflow-x: hidden;
+      margin: 2px 0;
       &.active {
         background-color: $MIDNIGHT_BLUE;
         a {
@@ -77,20 +132,11 @@ h1 {
       a {
         color: $CLOUDS;
         text-decoration: none;
+        display: block;
+        padding: .5em;
       }
     }
   }
-}
-
-.right {
-  display: table-cell;
-  vertical-align: top;
-  width: 100%;
-  padding-right: 1em;
-}
-
-#content {
-  padding-left: 1em;
 }
 
 .buildtimes-container {
@@ -106,13 +152,3 @@ h1 {
   float: left;
   display: block;
 }
-
-/*
-.increasing {
-  color: #F0340F;
-}
-
-.decreasing {
-  color: green;
-}
-*/

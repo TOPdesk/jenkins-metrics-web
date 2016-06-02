@@ -20,6 +20,18 @@
     }
   }
 
+  function addMenuExpandAndCollapseHandlers() {
+    $('#jobs-collapse').click(function () {
+      $('#jobs').removeClass('expanded').addClass('collapsed');
+      handleHashChange();
+    });
+    $('#jobs-expand').click(function () {
+      $('#jobs').removeClass('collapsed').addClass('expanded');
+      handleHashChange();
+    });
+  }
+
   $(document).ready(handleHashChange);
+  $(document).ready(addMenuExpandAndCollapseHandlers);
   $(window).bind('hashchange', handleHashChange);
 }());
