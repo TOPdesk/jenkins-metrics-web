@@ -55,10 +55,16 @@ body {
     padding-left: 1em;
 }
 
-.chart-container {
+.buildtimes-container {
     min-height: 300px;
     display: block;
-    width: auto;
+}
+
+.buildresults-container {
+    width: 300px;
+    height: 300px;
+    float: left;
+    display: block;
 }
 
 .increasing {
