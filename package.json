@@ -21,6 +21,7 @@
     "jade": "^1.11.0",
     "koa": "^1.2.0",
     "koa-router": "^5.4.0",
+    "koa-scss": "^0.2.0",
     "koa-static": "^2.0.0",
     "koa-views": "^4.1.0",
     "rethinkdb": "^2.3.1"
