@@ -1,10 +1,4 @@
 (function init() {
-  function select(event) {
-    var target = $(event.target);
-    var job = target.data('job');
-    selectJob(job);
-  }
-
   function selectJob(job) {
     var content = $('#content');
     var jobs = $('#jobs');
@@ -26,11 +20,6 @@
     }
   }
 
-  $(document).ready(function addJobClickListeners() {
-    $('#jobs')
-      .find('[data-job]')
-      .click(select);
-  });
   $(document).ready(handleHashChange);
   $(window).bind('hashchange', handleHashChange);
 }());

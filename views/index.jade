@@ -12,5 +12,6 @@ body
         nav
           ul
             each job in jobs
-              li(data-job="#{job}") #{job}
+              li(data-job="#{job}")
+                a(href="#!#{job}") #{job}
       main#content.right

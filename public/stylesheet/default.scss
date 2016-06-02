@@ -42,6 +42,18 @@ body {
   max-width: 350px;
 }
 
+h1 {
+  span {
+    padding: 0 .5em;
+  }
+  a {
+    text-decoration: none;
+    color: $MIDNIGHT_BLUE;
+    position: relative;
+    top: -3px;
+  }
+}
+
 #jobs {
   ul {
     padding: 0;
@@ -56,8 +68,15 @@ body {
       cursor: pointer;
       overflow-x: hidden;
       &.active {
-        color: $TURQOISE;
         background-color: $MIDNIGHT_BLUE;
+        a {
+          color: $TURQOISE;
+          text-decoration: none;
+        }
+      }
+      a {
+        color: $CLOUDS;
+        text-decoration: none;
       }
     }
   }
