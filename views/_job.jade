@@ -7,6 +7,12 @@ div#build-times.chart-container
 div#build-results.chart-container
   +replaceContent('#build-results', '/' + name + '/charts/buildresults')
 
+div#earliest-build-results.chart-container
+  +replaceContent('#earliest-build-results', '/' + name + '/charts/earliestbuildresults')
+
+div#latest-build-results.chart-container
+  +replaceContent('#latest-build-results', '/' + name + '/charts/latestbuildresults')
+
 //ul
 //  each build in builds
 //    li #{build.id} #{build.duration} #{build.result}
