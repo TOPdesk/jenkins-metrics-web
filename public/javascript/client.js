@@ -21,17 +21,35 @@
   }
 
   function addMenuExpandAndCollapseHandlers() {
-    $('#jobs-collapse').click(function () {
+    $('#jobs-collapse').click(function onCollapseClick() {
       $('#jobs').removeClass('expanded').addClass('collapsed');
       handleHashChange();
     });
-    $('#jobs-expand').click(function () {
+    $('#jobs-expand').click(function onExpandClick() {
       $('#jobs').removeClass('collapsed').addClass('expanded');
       handleHashChange();
     });
   }
 
+  function addSearchHandlers() {
+    $('#jobs-filter').keyup(function onFilterChange() {
+      var jobs = $('#jobs').find('li[data-job]');
+      var filter = $('#jobs-filter')
+        .val()
+        .trim()
+        .toLocaleLowerCase();
+      jobs.removeClass('hidden');
+      jobs.filter(function jobFilter(index, element) {
+        return $(element)
+          .attr('data-job')
+          .toLocaleLowerCase()
+          .indexOf(filter) === -1;
+      }).addClass('hidden');
+    });
+  }
+
   $(document).ready(handleHashChange);
   $(document).ready(addMenuExpandAndCollapseHandlers);
+  $(document).ready(addSearchHandlers);
   $(window).bind('hashchange', handleHashChange);
 }());

@@ -25,12 +25,33 @@ body {
   height: 100%;
 }
 
+::-webkit-input-placeholder {
+  color: $MIDNIGHT_BLUE;
+  opacity: 1;
+}
+:-moz-placeholder {
+  color: $MIDNIGHT_BLUE;
+  opacity: 1;
+}
+::-moz-placeholder {
+  color: $MIDNIGHT_BLUE;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: $MIDNIGHT_BLUE;
+  opacity: 1;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: LatoLatinWeb, Lato, Helvetica, Arial, sans-serif;
   color: $MIDNIGHT_BLUE;
   background-color: $CLOUDS;
+}
+
+.hidden {
+  display: none;
 }
 
 .container {
@@ -52,7 +73,6 @@ body {
   padding: 0 1em;
   overflow: hidden;
 }
-
 
 h1 {
   span {
@@ -80,6 +100,9 @@ h1 {
     }
     header {
       width: 37px;
+    }
+    .search {
+      display: none;
     }
   }
   &.expanded {
@@ -109,6 +132,37 @@ h1 {
       span {
         font-size: 24px;
         line-height: 24px;
+      }
+    }
+    .search {
+      float: left;
+      line-height: 32px;
+      color: $MIDNIGHT_BLUE;
+      font-size: 24px;
+      border: 0;
+      padding: 0;
+      margin: 0 5px;
+      width: 300px;
+      span {
+        width: 32px;
+        float: left;
+        text-align: center;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      input {
+        font-size: 24px;
+        float: left;
+        border: 0;
+        padding: 0;
+        margin: 0 0 0 5px;
+        width: 260px;
+        height: 32px;
+        color: $MIDNIGHT_BLUE;
+        background-color: $GREEN_SEA;
       }
     }
   }
