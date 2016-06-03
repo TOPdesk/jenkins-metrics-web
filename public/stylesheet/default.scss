@@ -83,6 +83,10 @@ h1 {
     color: $MIDNIGHT_BLUE;
     position: relative;
     top: -3px;
+    cursor: pointer;
+    &:hover {
+      color: $WET_ASPHALT;
+    }
   }
 }
 
