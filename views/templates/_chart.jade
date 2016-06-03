@@ -7,4 +7,7 @@ div(class="#{metric}-container")
     | var chart = !{JSON.stringify(chart)};
     | var container = $('##{jobName}-#{metric}-chart');
     block chartCustomization
-    | new Chart(container, chart);
+    if chart.type === 'bar' && isFirefox
+      include scripts/barChartFirefoxAnimationHack.js
+    else
+      | new Chart(container, chart);
