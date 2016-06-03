@@ -7,15 +7,5 @@ head
 body
   +chartGlobals
   div.container
-    aside#jobs.left.expanded
-      header
-        button#jobs-collapse
-          span ❌
-        button#jobs-expand
-          span ☰
-      nav
-        ul
-          each job in jobs
-            li(data-job="#{job}")
-              a(href="#!#{job}") #{job}
+    include templates/_joblist
     main#content.right
