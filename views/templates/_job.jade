@@ -1,4 +1,4 @@
-include mixins/scripts
+include ../mixins/scripts
 
 header
   h1
@@ -19,5 +19,5 @@ section#latest-build-results.chart-container
   +replaceContent('#latest-build-results', '/' + name + '/charts/latestbuildresults')
 
 +onDocumentReady
-  include templates/scripts/updateNavigationLinks.js
+  include scripts/updateNavigationLinks.js
   | updateNavigationLinks('#{name}');
