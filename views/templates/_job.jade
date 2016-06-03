@@ -6,17 +6,20 @@ header
     span #{name}
     a#next-job(href="#") ▶
 
-section#build-times.chart-container
+section#build-results.right.pie-chart-container
+  +replaceContent('#build-results', '/' + name + '/charts/buildresults')
+section#build-times.expanding.bar-chart-container
   +replaceContent('#build-times', '/' + name + '/charts/buildtimes')
 
-section#build-results.chart-container
-  +replaceContent('#build-results', '/' + name + '/charts/buildresults')
-
-section#earliest-build-results.chart-container
+section#earliest-build-results.right.pie-chart-container
   +replaceContent('#earliest-build-results', '/' + name + '/charts/earliestbuildresults')
+section#earliest-build-times.expanding.bar-chart-container
+  //+replaceContent('#earliest-build-times', '/' + name + '/charts/earliestbuildtimes')
 
-section#latest-build-results.chart-container
+section#latest-build-results.right.pie-chart-container
   +replaceContent('#latest-build-results', '/' + name + '/charts/latestbuildresults')
+section#latest-build-times.expanding.bar-chart-container
+  //+replaceContent('#latestbuild-times', '/' + name + '/charts/latestbuildtimes')
 
 +onDocumentReady
   include scripts/updateNavigationLinks.js

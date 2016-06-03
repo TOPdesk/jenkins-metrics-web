@@ -1,7 +1,7 @@
 include ../mixins/scripts
 
 div(class="#{metric}-container")
-  canvas.chart(id="#{jobName}-#{metric}-chart")
+  canvas(id="#{jobName}-#{metric}-chart")
   block additionalData
   +onDocumentReady
     | var chart = !{JSON.stringify(chart)};

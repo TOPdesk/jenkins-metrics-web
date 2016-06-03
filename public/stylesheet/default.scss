@@ -54,24 +54,34 @@ body {
   display: none;
 }
 
-.container {
+.page {
   margin: 0;
   padding: 0;
   height: 100%;
 }
 
 .left {
-  width: 350px;
-  height: 100%;
-  overflow-x: hidden;
   float: left;
 }
 
-.right {
+.expanding {
   width: auto;
+  overflow: hidden;
+}
+
+.right {
+  float: right;
+}
+
+.sidebar {
+  width: 350px;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.page-content {
   vertical-align: top;
   padding: 0 1em;
-  overflow: hidden;
 }
 
 h1 {
@@ -201,16 +211,14 @@ h1 {
   }
 }
 
-.buildtimes-container {
-  min-height: 300px;
-  display: block;
+.pie-chart-container {
+  width: 250px;
+  height: 250px;
 }
 
-.buildresults-container,
-.earliestbuildresults-container,
-.latestbuildresults-container {
-  width: 300px;
+.bar-chart-container {
   height: 300px;
-  float: left;
-  display: block;
+  div {
+    height: 300px;
+  }
 }
