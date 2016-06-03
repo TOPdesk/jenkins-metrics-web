@@ -88,9 +88,9 @@ h1 {
 
 #jobs {
   background-color: $MIDNIGHT_BLUE;
+  overflow-y: hidden;
   &.collapsed {
     width: 42px;
-    overflow-y: visible;
     button#jobs-collapse {
       display: none;
     }
@@ -111,10 +111,6 @@ h1 {
     }
   }
   header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10000;
     width: 345px;
     height: 32px;
     padding: 8px 5px 8px 0;
@@ -166,28 +162,32 @@ h1 {
       }
     }
   }
-  ul {
-    padding: 50px 0 0;
-    margin: -2px 0;
-    color: $CLOUDS;
-    li {
-      background-color: $WET_ASPHALT;
-      list-style: none;
-      cursor: pointer;
-      overflow-x: hidden;
-      margin: 2px 0;
-      &.active {
-        background-color: $MIDNIGHT_BLUE;
-        a {
-          color: $TURQOISE;
-          text-decoration: none;
+  nav {
+    height: 100%;
+    overflow-y: auto;
+    ul {
+      padding: 0;
+      margin: 0 0 50px;
+      color: $CLOUDS;
+      li {
+        background-color: $WET_ASPHALT;
+        list-style: none;
+        cursor: pointer;
+        overflow-x: hidden;
+        margin: 2px 0;
+        &.active {
+          background-color: $MIDNIGHT_BLUE;
+          a {
+            color: $TURQOISE;
+            text-decoration: none;
+          }
         }
-      }
-      a {
-        color: $CLOUDS;
-        text-decoration: none;
-        display: block;
-        padding: .5em;
+        a {
+          color: $CLOUDS;
+          text-decoration: none;
+          display: block;
+          padding: .5em;
+        }
       }
     }
   }
