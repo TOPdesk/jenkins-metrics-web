@@ -82,6 +82,8 @@ body {
 .page-content {
   vertical-align: top;
   padding: 0 1em;
+  overflow-y: auto;
+  height: 100%;
 }
 
 h1 {
