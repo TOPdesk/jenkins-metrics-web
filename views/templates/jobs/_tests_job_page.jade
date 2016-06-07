@@ -1,5 +1,7 @@
 extends _job_page
 
 block content
+  section#test-result-distribution.right.pie-chart-container
+    +replaceContent('#test-result-distribution', '/' + name + '/charts/testresultdistribution')
   section#test-results.expanding.bar-chart-container
     +replaceContent('#test-results', '/' + name + '/charts/testresults')
