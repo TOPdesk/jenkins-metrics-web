@@ -6,6 +6,13 @@ header
     span #{name}
     a#next-job(href="#") ▶
 
+nav.pages
+  ul
+    li
+      a(href="#!#{name}",class="#{page === 'default' ? 'active' : ''}") Build times
+    li
+      a(href="#!#{name}/tests",class="#{page === 'tests' ? 'active' : ''}") Test results
+
 block content
 
 +onDocumentReady

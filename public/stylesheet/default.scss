@@ -25,6 +25,10 @@ body {
   height: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 ::-webkit-input-placeholder {
   color: $MIDNIGHT_BLUE;
   opacity: 1;
@@ -91,7 +95,6 @@ h1 {
     padding: 0 .5em;
   }
   a {
-    text-decoration: none;
     color: $MIDNIGHT_BLUE;
     position: relative;
     top: -3px;
@@ -199,15 +202,41 @@ h1 {
           background-color: $MIDNIGHT_BLUE;
           a {
             color: $TURQOISE;
-            text-decoration: none;
           }
         }
         a {
           color: $CLOUDS;
-          text-decoration: none;
           display: block;
           padding: .5em;
         }
+      }
+    }
+  }
+}
+
+nav.pages {
+  ul {
+    margin-top: 0;
+    border: 2px solid $WET_ASPHALT;
+    border-radius: 6px;
+    padding: 6px;
+    display: inline-block;
+    li {
+      list-style: none;
+      display: inline-block;
+      padding: 6px 2px;
+    }
+    a {
+      color: $CLOUDS;
+      background-color: $WET_ASPHALT;
+      border-radius: 4px;
+      padding: 6px 21px;
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: 700;
+      &.active {
+        color: $TURQOISE;
+        background-color: $MIDNIGHT_BLUE;
       }
     }
   }
