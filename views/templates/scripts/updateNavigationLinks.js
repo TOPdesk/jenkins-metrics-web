@@ -13,6 +13,10 @@ function updateNavigationLinks(jobName) {
   var page = getPage();
   var prev = $.merge(selectedJob.prev(), jobs.last());
   var next = $.merge(selectedJob.next(), jobs.first());
+  jobs.each(function(index, item) {
+    var link = $(item).find('a');
+    $(link).attr('href', '#!' + $(item).attr('data-job') + page);
+  });
   $('#previous-job').attr('href', '#!' + prev.attr('data-job') + page);
   $('#next-job').attr('href', '#!' + next.attr('data-job') + page);
 }
