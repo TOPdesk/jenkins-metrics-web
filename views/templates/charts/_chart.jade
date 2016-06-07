@@ -1,4 +1,4 @@
-include ../mixins/scripts
+include ../../mixins/scripts
 
 div(class="#{metric}-container")
   canvas(id="#{jobName}-#{metric}-chart")
@@ -8,6 +8,6 @@ div(class="#{metric}-container")
     | var container = $('##{jobName}-#{metric}-chart');
     block chartCustomization
     if chart.type === 'bar' && isFirefox
-      include scripts/barChartFirefoxAnimationHack.js
+      include ../scripts/barChartFirefoxAnimationHack.js
     else
       | new Chart(container, chart);

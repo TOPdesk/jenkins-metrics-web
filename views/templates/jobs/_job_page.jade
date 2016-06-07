@@ -1,0 +1,13 @@
+include ../../mixins/scripts
+
+header
+  h1
+    a#previous-job(href="#") ◀
+    span #{name}
+    a#next-job(href="#") ▶
+
+block content
+
++onDocumentReady
+  include ../scripts/updateNavigationLinks.js
+  | updateNavigationLinks('#{name}');

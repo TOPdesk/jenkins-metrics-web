@@ -1,9 +1,10 @@
 (function init() {
-  function selectJob(job) {
+  function selectJob(job, page) {
     var content = $('#content');
     var jobs = $('#jobs');
-    $.get('/' + job, function completed(result) {
-      window.location.hash = '#!' + job;
+    var suffix = page ? '/' + page : '';
+    $.get('/' + job + suffix, function completed(result) {
+      window.location.hash = '#!' + job + suffix;
       content.html(result);
       jobs.find('li').removeClass('active');
       jobs.find('li[data-job="' + job + '"]').addClass('active');
@@ -15,8 +16,13 @@
   }
 
   function handleHashChange() {
-    if (window.location.hash.substr(0, 2) === '#!') {
-      selectJob(window.location.hash.substr(2));
+    var hash = window.location.hash;
+    var fragments;
+    if (hash.substr(0, 2) === '#!') {
+      fragments = hash
+        .substr(2)
+        .split('/');
+      selectJob(fragments[0], fragments[1]);
     }
   }
 

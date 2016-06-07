@@ -1,0 +1,17 @@
+extends _job_page
+
+block content
+  section#build-results.right.pie-chart-container
+    +replaceContent('#build-results', '/' + name + '/charts/buildresults')
+  section#build-times.expanding.bar-chart-container
+    +replaceContent('#build-times', '/' + name + '/charts/buildtimes')
+
+  section#earliest-build-results.right.pie-chart-container
+    +replaceContent('#earliest-build-results', '/' + name + '/charts/earliestbuildresults')
+  section#earliest-build-times.expanding.bar-chart-container
+    +replaceContent('#earliest-build-times', '/' + name + '/charts/earliestbuildtimes')
+
+  section#latest-build-results.right.pie-chart-container
+    +replaceContent('#latest-build-results', '/' + name + '/charts/latestbuildresults')
+  section#latest-build-times.expanding.bar-chart-container
+    +replaceContent('#latest-build-times', '/' + name + '/charts/latestbuildtimes')
