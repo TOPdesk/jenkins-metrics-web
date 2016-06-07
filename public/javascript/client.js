@@ -59,8 +59,29 @@
     });
   }
 
+  function addKeyNavigationHandler() {
+    $(document).keydown(function onKeyDown(event) {
+      if ($(':focus').is('input')) {
+        return;
+      }
+      switch (event.keyCode) {
+        case 37:
+        case 38:
+          $('#previous-job')[0].click();
+          break;
+        case 39:
+        case 40:
+          $('#next-job')[0].click();
+          break;
+        default:
+          // does nothing
+      }
+    });
+  }
+
   $(document).ready(handleHashChange);
   $(document).ready(addMenuExpandAndCollapseHandlers);
   $(document).ready(addSearchHandler);
+  $(document).ready(addKeyNavigationHandler);
   $(window).bind('hashchange', handleHashChange);
 }());
