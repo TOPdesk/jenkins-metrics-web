@@ -32,13 +32,18 @@
   }
 
   function addSearchHandlers() {
-    $('#jobs-filter').keyup(function onFilterChange() {
+    var jobsFilter = $('#jobs-filter');
+    jobsFilter.keyup(function onFilterChange(event) {
       var jobs = $('#jobs').find('li[data-job]');
-      var filter = $('#jobs-filter')
+      var filter = jobsFilter
         .val()
         .trim()
         .toLocaleLowerCase();
       jobs.removeClass('hidden');
+      if (event.keyCode === 27) {
+        jobsFilter.val('');
+        return;
+      }
       jobs.filter(function jobFilter(index, element) {
         return $(element)
           .attr('data-job')
