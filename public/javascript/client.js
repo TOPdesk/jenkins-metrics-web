@@ -37,7 +37,7 @@
     });
   }
 
-  function addSearchHandlers() {
+  function addSearchHandler() {
     var jobsFilter = $('#jobs-filter');
     jobsFilter.keyup(function onFilterChange(event) {
       var jobs = $('#jobs').find('li[data-job]');
@@ -61,6 +61,6 @@
 
   $(document).ready(handleHashChange);
   $(document).ready(addMenuExpandAndCollapseHandlers);
-  $(document).ready(addSearchHandlers);
+  $(document).ready(addSearchHandler);
   $(window).bind('hashchange', handleHashChange);
 }());
