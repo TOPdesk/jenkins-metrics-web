@@ -1,17 +1,20 @@
-style.
-  #error h1 {
-    color: #7f8c8d;
-    font-size: 96px;
-    margin-top: 1em;
-    display: block;
-    text-align: center;
-  }
-  #error h3 {
-    color: #95a5a6;
-    font-size: 32px;
-    display: block;
-    text-align: center;
-  }
+include ../mixins/dependencies
+header
+  +styles
+  style.
+    #error h1 {
+      color: #7f8c8d;
+      font-size: 96px;
+      margin-top: 1em;
+      display: block;
+      text-align: center;
+    }
+    #error h3 {
+      color: #95a5a6;
+      font-size: 32px;
+      display: block;
+      text-align: center;
+    }
 main#error
   h1 Error #{status}
   h3
