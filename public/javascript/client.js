@@ -10,8 +10,12 @@
       jobs.find('li[data-job="' + job + '"]').addClass('active');
     }).fail(function failed() {
       jobs.find('li').removeClass('active');
-      console.error('Failed to load', job);
-      content.html('ERROR');
+      $.get('/error500', function completed(result) {
+        content.html(result);
+      }).fail(function errorPageFailed() {
+        content.html('<h1>Error 500</h1><h3>Something bad happened. Sorry about that.</h3>');
+        console.error('Failed to load error page');
+      });
     });
   }
 
