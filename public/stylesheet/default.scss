@@ -90,8 +90,11 @@ body {
 
 .page-main {
   padding: 0 1em;
-  margin-bottom: 100px;
   background-color: $CLOUDS;
+}
+
+.page-footer {
+  height: 100px;
 }
 
 .inner-top-shadow {

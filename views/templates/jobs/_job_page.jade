@@ -1,5 +1,5 @@
 include ../../mixins/scripts
-div.page-main
+.page-main
   header
     h1
       a#previous-job(href="#") ◀
@@ -14,6 +14,7 @@ div.page-main
         a(href="#!#{name}/tests",class="#{page === 'tests' ? 'active' : ''}") Test results
 
   block content
+.page-footer
 
 +onDocumentReady
   include ../scripts/updateNavigationLinks.js
