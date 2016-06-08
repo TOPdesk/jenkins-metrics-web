@@ -69,7 +69,6 @@ body {
 }
 
 .expanding {
-  //width: auto;
   overflow: hidden;
 }
 
@@ -85,9 +84,26 @@ body {
 
 .page-content {
   vertical-align: top;
-  padding: 0 1em;
   overflow-y: auto;
   height: 100%;
+}
+
+.page-main {
+  padding: 0 1em;
+  margin-bottom: 100px;
+  background-color: $CLOUDS;
+}
+
+.inner-top-shadow {
+  -webkit-box-shadow: inset 0 5px 5px -5px #000;
+  -moz-box-shadow: inset 0 5px 5px -5px #000;
+  box-shadow: inset 0 5px 5px -5px #000;
+}
+
+.right-shadow {
+  -webkit-box-shadow: 5px 0 5px -3px #000;
+  -moz-box-shadow: 5px 0 5px -3px #000;
+  box-shadow: 5px 0 5px -3px #000;
 }
 
 h1 {
@@ -239,6 +255,25 @@ nav.pages {
         background-color: $MIDNIGHT_BLUE;
       }
     }
+  }
+}
+
+footer {
+  padding: 1em;
+  background-color: $SILVER;
+  font-size: small;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  z-index: -1000;
+  p {
+    margin-left: 390px;
+  }
+  a {
+    color: $MIDNIGHT_BLUE;
+    font-weight: bold;
   }
 }
 
