@@ -9,6 +9,8 @@ include ../../mixins/scripts
   nav.pages
     ul
       li
+        a(href="#!#{name}", class="#{page === 'overview' ? 'active' : ''}") Overview
+      li
         a(href="#!#{name}/builds",class="#{page === 'builds' ? 'active' : ''}") Build times
       li
         a(href="#!#{name}/tests",class="#{page === 'tests' ? 'active' : ''}") Test results
