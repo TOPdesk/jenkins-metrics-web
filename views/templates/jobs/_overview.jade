@@ -49,3 +49,23 @@ block content
         td Latest
         td
           +decimal(testResultAverages.skipped.latest)
+
+  section#average-failed-tests
+    table
+      tr
+        th(colspan=2) Average Failed Tests
+        th
+      tr
+        td All
+        td
+          +decimal(testResultAverages.failed.overall)
+        td(rowspan=3,class="#{testResultAverages.failed.earliest >= testResultAverages.failed.latest ? 'gain' : 'loss'}")
+          +decimal(testResultAverages.failed.earliest - testResultAverages.failed.latest)
+      tr
+        td Earliest
+        td
+          +decimal(testResultAverages.failed.earliest)
+      tr
+        td Latest
+        td
+          +decimal(testResultAverages.failed.latest)
