@@ -6,6 +6,9 @@ mixin millisecsToTimeString(millis)
   - var minutes = Math.floor(base / 60) % 60;
   | #{minutes}m #{('00' + seconds).slice(-2)}s
 
+mixin decimal(number)
+  | #{Number(number).toFixed(2)}
+
 block content
   section#average-build-times
     table
@@ -26,3 +29,23 @@ block content
         td Latest
         td
           +millisecsToTimeString(latestAverageBuildTime)
+
+  section#average-skipped-tests
+    table
+      tr
+        th(colspan=2) Average Skipped Tests
+        th
+      tr
+        td All
+        td
+          +decimal(averageSkippedTests)
+        td(rowspan=3,class="#{averageSkippedTestsImprovement >= 0 ? 'gain' : 'loss'}")
+          +decimal(averageSkippedTestsImprovement)
+      tr
+        td Earliest
+        td
+          +decimal(earliestAverageSkippedTests)
+      tr
+        td Latest
+        td
+          +decimal(latestAverageSkippedTests)
