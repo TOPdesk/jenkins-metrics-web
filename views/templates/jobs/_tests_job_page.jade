@@ -2,16 +2,16 @@ extends _job_page
 
 block content
   section#test-result-distribution.right.pie-chart-container
-    +replaceContent('#test-result-distribution', '/' + name + '/charts/testresultdistribution')
+    +replaceContent('#test-result-distribution', '/charts/' + name + '/testresultdistribution')
   section#test-results.expanding.bar-chart-container
-    +replaceContent('#test-results', '/' + name + '/charts/testresults')
+    +replaceContent('#test-results', '/charts/' + name + '/testresults')
 
   section#earliest-test-result-distribution.right.pie-chart-container
-    +replaceContent('#earliest-test-result-distribution', '/' + name + '/charts/earliesttestresultdistribution')
+    +replaceContent('#earliest-test-result-distribution', '/charts/' + name + '/earliesttestresultdistribution')
   section#earliest-test-results.expanding.bar-chart-container
-    +replaceContent('#earliest-test-results', '/' + name + '/charts/earliesttestresults')
+    +replaceContent('#earliest-test-results', '/charts/' + name + '/earliesttestresults')
 
   section#latest-test-result-distribution.right.pie-chart-container
-    +replaceContent('#latest-test-result-distribution', '/' + name + '/charts/latesttestresultdistribution')
+    +replaceContent('#latest-test-result-distribution', '/charts/' + name + '/latesttestresultdistribution')
   section#latest-test-results.expanding.bar-chart-container
-    +replaceContent('#latest-test-results', '/' + name + '/charts/latesttestresults')
+    +replaceContent('#latest-test-results', '/charts/' + name + '/latesttestresults')
