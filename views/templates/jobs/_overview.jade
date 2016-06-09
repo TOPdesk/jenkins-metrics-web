@@ -18,17 +18,17 @@ block content
       tr
         td All
         td
-          +millisecsToTimeString(averageBuildTime)
-        td(rowspan=3,class="#{averageBuildTimeImprovement > 0 ? 'gain' : 'loss'}")
-          +millisecsToTimeString(averageBuildTimeImprovement)
+          +millisecsToTimeString(buildTimeAverages.overall)
+        td(rowspan=3,class="#{buildTimeAverages.earliest >= buildTimeAverages.latest ? 'gain' : 'loss'}")
+          +millisecsToTimeString(buildTimeAverages.earliest - buildTimeAverages.latest)
       tr
         td Earliest
         td
-          +millisecsToTimeString(earliestAverageBuildTime)
+          +millisecsToTimeString(buildTimeAverages.earliest)
       tr
         td Latest
         td
-          +millisecsToTimeString(latestAverageBuildTime)
+          +millisecsToTimeString(buildTimeAverages.latest)
 
   section#average-skipped-tests
     table
@@ -38,14 +38,14 @@ block content
       tr
         td All
         td
-          +decimal(averageSkippedTests)
-        td(rowspan=3,class="#{averageSkippedTestsImprovement >= 0 ? 'gain' : 'loss'}")
-          +decimal(averageSkippedTestsImprovement)
+          +decimal(testResultAverages.skipped.overall)
+        td(rowspan=3,class="#{testResultAverages.skipped.earliest >= testResultAverages.skipped.latest ? 'gain' : 'loss'}")
+          +decimal(testResultAverages.skipped.earliest - testResultAverages.skipped.latest)
       tr
         td Earliest
         td
-          +decimal(earliestAverageSkippedTests)
+          +decimal(testResultAverages.skipped.earliest)
       tr
         td Latest
         td
-          +decimal(latestAverageSkippedTests)
+          +decimal(testResultAverages.skipped.latest)
