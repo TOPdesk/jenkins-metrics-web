@@ -3,4 +3,5 @@
 *-compiled.js
 *-compiled.js.map
 node_modules
+public/vendor
 public/stylesheet/default.css
