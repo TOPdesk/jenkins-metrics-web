@@ -1,42 +1,53 @@
 include ../../mixins/metrics
 
+mixin valueAndRatio(value, ratio)
+  .metric-main
+    if ratio === 0
+      | 0
+    else
+      +decimal(Math.abs(ratio) * 100)
+    | %
+  .metric-sub
+    | #{Math.abs(value)}
+
 section#test-result-metrics
-  table
-    tr
-      th(colspan=5) Test Results
-    tr
+  table.metrics
+    tr.header
+      th
+      th(colspan=3) Test Results
+      th(rowspan=2) Gain
+    tr.header
       th
       th Overall
       th Earliest
       th Latest
-      th
     tr
-      td All
-      td #{overall.total}
-      td #{earliest.total}
-      td #{latest.total}
-      td gain
+      th All
+      td
+        .metric-main #{overall.total}
+      td
+        .metric-main #{earliest.total}
+      td
+        .metric-main #{latest.total}
+      td.metric-main(class="#{earliest.total > latest.total ? 'metric-loss' : 'metric-gain' }")
+        | #{latest.total - earliest.total}
     tr
-      td Skipped
-      td #{overall.skipped}
-        +decimal(overall.skippedRatio * 100)
-        | %
-      td #{earliest.skipped}
-        +decimal(earliest.skippedRatio * 100)
-        | %
-      td #{latest.skipped}
-        +decimal(latest.skippedRatio * 100)
-        | %
-      td gain
+      th Skipped
+      td
+        +valueAndRatio(overall.skipped, overall.skippedRatio)
+      td
+        +valueAndRatio(earliest.skipped, earliest.skippedRatio)
+      td
+        +valueAndRatio(latest.skipped, latest.skippedRatio)
+      td.metric-main(class="#{latest.skipped > earliest.skipped ? 'metric-loss' : 'metric-gain' }")
+        +valueAndRatio(earliest.skipped - latest.skipped, earliest.skippedRatio - latest.skippedRatio)
     tr
-      td Failed
-      td #{overall.failed}
-        +decimal(overall.failureRatio * 100)
-        | %
-      td #{earliest.failed}
-        +decimal(earliest.failureRatio * 100)
-        | %
-      td #{latest.failed}
-        +decimal(latest.failureRatio * 100)
-        | %
-      td gain
+      th Failed
+      td
+        +valueAndRatio(overall.failed, overall.failureRatio)
+      td
+        +valueAndRatio(earliest.failed, earliest.failureRatio)
+      td
+        +valueAndRatio(latest.failed, latest.failureRatio)
+      td.metric-main(class="#{latest.failed > earliest.failed ? 'metric-loss' : 'metric-gain' }")
+        +valueAndRatio(earliest.failed - latest.failed, earliest.failureRatio - latest.failureRatio)

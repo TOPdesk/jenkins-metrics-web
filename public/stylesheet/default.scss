@@ -292,10 +292,74 @@ footer {
   }
 }
 
+.metric-gain,
 .gain {
   background-color: $NEPHRITIS;
 }
 
+.metric-loss,
 .loss {
+  color: $SILVER;
   background-color: $POMEGRANATE;
+}
+
+table.metrics {
+  background-color: $SILVER;
+  border-collapse: collapse;
+  td:first-child,
+  th:first-child {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  th:first-child {
+    text-align: left;
+  }
+  th:first-child {
+    border-right: 1px solid $CLOUDS;
+  }
+  td:last-child,
+  th:last-child {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  td:last-child {
+    border-left: 1px solid $CLOUDS;
+  }
+  tr {
+    padding: 0 5px;
+    border-bottom: 1px solid $CLOUDS;
+  }
+  tr.header {
+    color: $SILVER;
+    background-color: $MIDNIGHT_BLUE;
+    border: none;
+    &:first-child {
+      th {
+        padding-top: .5em;
+        &:last-child {
+          border-left: 1px solid $SILVER;
+        }
+      }
+    }
+    &:nth-child(2) {
+      th {
+        padding-bottom: .5em;
+      }
+    }
+    th:first-child {
+      border: none;
+    }
+  }
+}
+
+.metric-main {
+  text-align: center;
+  padding: .5em .5em .25em;
+  font-size: larger;
+}
+
+.metric-sub {
+  text-align: center;
+  padding: 0 0 .5em;
+  font-size: small;
 }
