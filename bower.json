@@ -1,0 +1,26 @@
+{
+  "name": "jenkins-metrics-web",
+  "description": "Visualises jenkins-metrics-collector results from a RethinkDB.",
+  "main": "lib/app.js",
+  "authors": [
+    "István Rábel <thraex.aquator@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "jenkins",
+    "metrics"
+  ],
+  "homepage": "https://github.com/TOPdesk/jenkins-metrics-web",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "public/vendor/bower_components",
+    "config"
+  ],
+  "dependencies": {
+    "jquery": "^3.0.0",
+    "Chart.js": "chartjs#^2.1.4",
+    "font-lato-2-subset": "^0.4.0"
+  }
+}

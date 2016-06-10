@@ -14,6 +14,9 @@
     "type": "git",
     "url": "https://github.com/TOPdesk/jenkins-metrics-web"
   },
+  "scripts": {
+    "prepublish": "bower install"
+  },
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.4.0",
@@ -28,6 +31,6 @@
     "rethinkdb": "^2.3.1"
   },
   "devDependencies": {
-    "config": "^1.20.4"
+    "bower": "^1.7.9"
   }
 }
