@@ -1,0 +1,42 @@
+include ../../mixins/metrics
+
+section#test-result-metrics
+  table
+    tr
+      th(colspan=5) Test Results
+    tr
+      th
+      th Overall
+      th Earliest
+      th Latest
+      th
+    tr
+      td All
+      td #{overall.total}
+      td #{earliest.total}
+      td #{latest.total}
+      td gain
+    tr
+      td Skipped
+      td #{overall.skipped}
+        +decimal(overall.skippedRatio * 100)
+        | %
+      td #{earliest.skipped}
+        +decimal(earliest.skippedRatio * 100)
+        | %
+      td #{latest.skipped}
+        +decimal(latest.skippedRatio * 100)
+        | %
+      td gain
+    tr
+      td Failed
+      td #{overall.failed}
+        +decimal(overall.failureRatio * 100)
+        | %
+      td #{earliest.failed}
+        +decimal(earliest.failureRatio * 100)
+        | %
+      td #{latest.failed}
+        +decimal(latest.failureRatio * 100)
+        | %
+      td gain

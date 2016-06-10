@@ -30,42 +30,5 @@ block content
         td
           +millisecsToTimeString(buildTimeAverages.latest)
 
-  section#average-skipped-tests
-    table
-      tr
-        th(colspan=2) Average Skipped Tests
-        th
-      tr
-        td All
-        td
-          +decimal(testResultAverages.skipped.overall)
-        td(rowspan=3,class="#{testResultAverages.skipped.earliest >= testResultAverages.skipped.latest ? 'gain' : 'loss'}")
-          +decimal(testResultAverages.skipped.earliest - testResultAverages.skipped.latest)
-      tr
-        td Earliest
-        td
-          +decimal(testResultAverages.skipped.earliest)
-      tr
-        td Latest
-        td
-          +decimal(testResultAverages.skipped.latest)
-
-  section#average-failed-tests
-    table
-      tr
-        th(colspan=2) Average Failed Tests
-        th
-      tr
-        td All
-        td
-          +decimal(testResultAverages.failed.overall)
-        td(rowspan=3,class="#{testResultAverages.failed.earliest >= testResultAverages.failed.latest ? 'gain' : 'loss'}")
-          +decimal(testResultAverages.failed.earliest - testResultAverages.failed.latest)
-      tr
-        td Earliest
-        td
-          +decimal(testResultAverages.failed.earliest)
-      tr
-        td Latest
-        td
-          +decimal(testResultAverages.failed.latest)
+  section#test-result-metrics.expanding
+    +replaceContent('#test-result-metrics', '/metrics/' + name + '/testresults')

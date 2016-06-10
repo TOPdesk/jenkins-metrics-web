@@ -1,0 +1,8 @@
+mixin millisecsToTimeString(millis)
+  - var base = Math.floor(Math.abs(millis) / 1000);
+  - var seconds = base % 60;
+  - var minutes = Math.floor(base / 60) % 60;
+  | #{minutes}m #{('00' + seconds).slice(-2)}s
+
+mixin decimal(number)
+  | #{Number(number).toFixed(2)}
