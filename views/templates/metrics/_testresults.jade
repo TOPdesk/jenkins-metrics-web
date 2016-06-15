@@ -39,7 +39,7 @@ section#test-result-metrics
         +valueAndRatio(earliest.skipped, earliest.skippedRatio)
       td
         +valueAndRatio(latest.skipped, latest.skippedRatio)
-      td.metric-main(class="#{latest.skipped > earliest.skipped ? 'metric-loss' : 'metric-gain' }")
+      td(class="#{latest.skipped > earliest.skipped ? 'metric-loss' : 'metric-gain' }")
         +valueAndRatio(earliest.skipped - latest.skipped, earliest.skippedRatio - latest.skippedRatio)
     tr
       th Failed
@@ -49,5 +49,5 @@ section#test-result-metrics
         +valueAndRatio(earliest.failed, earliest.failureRatio)
       td
         +valueAndRatio(latest.failed, latest.failureRatio)
-      td.metric-main(class="#{latest.failed > earliest.failed ? 'metric-loss' : 'metric-gain' }")
+      td(class="#{latest.failed > earliest.failed ? 'metric-loss' : 'metric-gain' }")
         +valueAndRatio(earliest.failed - latest.failed, earliest.failureRatio - latest.failureRatio)
