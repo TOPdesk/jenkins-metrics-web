@@ -342,8 +342,10 @@ table.metrics {
       }
     }
     &:nth-child(2) {
+      border-bottom: 1px solid $CLOUDS;
       th {
         padding-bottom: .5em;
+        border-bottom: 1px solid $CLOUDS;
       }
     }
     th:first-child {
