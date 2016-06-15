@@ -15,7 +15,7 @@ section#test-result-metrics
     tr.header
       th
       th(colspan=3) Test Results
-      th(rowspan=2) Gain
+      th(rowspan=2) Changes
     tr.header
       th
       th Overall
@@ -30,7 +30,7 @@ section#test-result-metrics
       td
         .metric-main #{latest.total}
       td.metric-main(class="#{earliest.total > latest.total ? 'metric-loss' : 'metric-gain' }")
-        | #{latest.total - earliest.total}
+        | #{Math.abs(latest.total - earliest.total)}
     tr
       th Skipped
       td
