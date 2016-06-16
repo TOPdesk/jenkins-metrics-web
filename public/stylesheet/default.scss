@@ -86,6 +86,7 @@ body {
   vertical-align: top;
   overflow-y: auto;
   height: 100%;
+  position: relative;
 }
 
 .page-main {
@@ -362,16 +363,45 @@ table.metrics {
 }
 
 // Customize perfect-scrollbar
-.ps-container.ps-active-y > .ps-scrollbar-y-rail:hover,
-.ps-container.ps-active-y.ps-in-scrolling > .ps-scrollbar-y-rail {
-  background-color: $MIDNIGHT_BLUE;
+#jobs {
+  .ps-container.ps-active-y {
+    > .ps-scrollbar-y-rail {
+      &:hover {
+        background-color: $MIDNIGHT_BLUE;
+        > .ps-scrollbar-y {
+          background-color: $GREEN_SEA;
+        }
+      }
+      > .ps-scrollbar-y {
+        background-color: $GREEN_SEA;
+      }
+    }
+    &.ps-in-scrolling > .ps-scrollbar-y-rail {
+      background-color: $MIDNIGHT_BLUE;
+      > .ps-scrollbar-y {
+        background-color: $GREEN_SEA;
+      }
+    }
+  }
 }
 
-.ps-container.ps-active-y > .ps-scrollbar-y-rail > .ps-scrollbar-y {
-  background-color: $GREEN_SEA;
+#content.ps-container.ps-active-y {
+  > .ps-scrollbar-y-rail {
+    &:hover {
+      background-color: $CONCRETE;
+      > .ps-scrollbar-y {
+        background-color: $MIDNIGHT_BLUE;
+      }
+    }
+    > .ps-scrollbar-y {
+      background-color: $MIDNIGHT_BLUE;
+    }
+  }
+  &.ps-in-scrolling > .ps-scrollbar-y-rail {
+    background-color: $CONCRETE;
+    > .ps-scrollbar-y {
+      background-color: $MIDNIGHT_BLUE;
+    }
+  }
 }
 
-.ps-container.ps-active-y > .ps-scrollbar-y-rail:hover > .ps-scrollbar-y,
-.ps-container.ps-active-y.ps-in-scrolling > .ps-scrollbar-y-rail > .ps-scrollbar-y {
-  background-color: $GREEN_SEA;
-}

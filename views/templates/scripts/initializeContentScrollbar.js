@@ -1,5 +1,5 @@
-function initializeJobListScrollbar() {
-  var container = $('#jobs').find('nav');
+function initializeContentScrollbar() {
+  var container = $('#content');
   container.perfectScrollbar();
   $(window).resize(function() {
     container.perfectScrollbar('update');
