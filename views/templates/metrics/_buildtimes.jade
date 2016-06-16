@@ -1,0 +1,26 @@
+mixin millisecsToTimeString(millis)
+  - var base = Math.floor(Math.abs(millis) / 1000);
+  - var seconds = base % 60;
+  - var minutes = Math.floor(base / 60) % 60;
+  | #{minutes}m #{('00' + seconds).slice(-2)}s
+
+section#build-time-metrics
+  table.metrics
+    tr.header
+      th
+      th Average Build Times
+      th Changes
+    tr
+      th All
+      td.metric-main
+        +millisecsToTimeString(overall)
+      td.metric-main(rowspan=3, class="#{earliest < latest ? 'metric-loss' : 'metric-gain' }")
+        +millisecsToTimeString(latest - earliest)
+    tr
+      th Earliest
+      td.metric-main
+        +millisecsToTimeString(earliest)
+    tr
+      th Latest
+      td.metric-main
+        +millisecsToTimeString(latest)

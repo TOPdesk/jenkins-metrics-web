@@ -1,34 +1,9 @@
 extends _page
 
-mixin millisecsToTimeString(millis)
-  - var base = Math.floor(Math.abs(millis) / 1000);
-  - var seconds = base % 60;
-  - var minutes = Math.floor(base / 60) % 60;
-  | #{minutes}m #{('00' + seconds).slice(-2)}s
-
-mixin decimal(number)
-  | #{Number(number).toFixed(2)}
-
 block content
-  section#average-build-times
-    table
-      tr
-        th(colspan=2) Average Build Time
-        th
-      tr
-        td All
-        td
-          +millisecsToTimeString(buildTimeAverages.overall)
-        td(rowspan=3,class="#{buildTimeAverages.earliest >= buildTimeAverages.latest ? 'gain' : 'loss'}")
-          +millisecsToTimeString(buildTimeAverages.earliest - buildTimeAverages.latest)
-      tr
-        td Earliest
-        td
-          +millisecsToTimeString(buildTimeAverages.earliest)
-      tr
-        td Latest
-        td
-          +millisecsToTimeString(buildTimeAverages.latest)
-
-  section#test-result-metrics.expanding
+  section#test-result-metrics.expanding.left
     +replaceContent('#test-result-metrics', '/metrics/' + name + '/testresults')
+
+  section#build-time-metrics.expanding.left
+    +replaceContent('#build-time-metrics', '/metrics/' + name + '/buildtimes')
+

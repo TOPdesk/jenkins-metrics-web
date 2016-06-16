@@ -304,6 +304,7 @@ footer {
 }
 
 table.metrics {
+  margin-right: 1em;
   background-color: $SILVER;
   border-collapse: collapse;
   td:first-child,
@@ -336,15 +337,18 @@ table.metrics {
     &:first-child {
       th {
         padding-top: .5em;
+        padding-bottom: .5em;
         &:last-child {
           border-left: 1px solid $SILVER;
+        }
+        &:nth-child(2) {
+          padding-right: .5em;
         }
       }
     }
     &:nth-child(2) {
       border-bottom: 1px solid $CLOUDS;
       th {
-        padding-bottom: .5em;
         border-bottom: 1px solid $CLOUDS;
       }
     }
