@@ -116,11 +116,7 @@ h1 {
   a {
     color: $MIDNIGHT_BLUE;
     position: relative;
-    top: -3px;
     cursor: pointer;
-    &:hover {
-      color: $WET_ASPHALT;
-    }
   }
 }
 
@@ -164,10 +160,7 @@ h1 {
       color: $MIDNIGHT_BLUE;
       background-color: $GREEN_SEA;
       cursor: pointer;
-      &:hover {
-        color: $WET_ASPHALT;
-      }
-      span {
+      i {
         font-size: 24px;
         line-height: 24px;
       }
@@ -181,15 +174,12 @@ h1 {
       padding: 0;
       margin: 0 5px;
       width: 300px;
-      span {
+      vertical-align: middle;
+      i {
         width: 32px;
+        line-height: 32px;
         float: left;
         text-align: center;
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-        transform: rotate(45deg);
       }
       input {
         font-size: 24px;
