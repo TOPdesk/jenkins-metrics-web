@@ -1,3 +1,5 @@
+include ../mixins/scripts
+
 aside#jobs.sidebar.left.expanded.right-shadow
   header
     button#jobs-collapse
@@ -8,7 +10,11 @@ aside#jobs.sidebar.left.expanded.right-shadow
       i.fa.fa-search(aria-hidden="true")
       input(type="text",placeholder="Search")#jobs-filter
   nav
-    ul
+    ul.scrollbar-inner
       each job in jobs
         li(data-job="#{job}")
           a(href="#!#{job}") #{job}
+
++onDocumentReady
+  include ../templates/scripts/perfectScrollbar.js
+  | initializeJobListScrollbar();

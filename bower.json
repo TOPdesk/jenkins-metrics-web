@@ -22,6 +22,7 @@
     "jquery": "^3.0.0",
     "Chart.js": "chartjs#^2.1.4",
     "font-lato-2-subset": "^0.4.0",
-    "components-font-awesome": "^4.6.3"
+    "components-font-awesome": "^4.6.3",
+    "perfect-scrollbar": "^0.6.11"
   }
 }

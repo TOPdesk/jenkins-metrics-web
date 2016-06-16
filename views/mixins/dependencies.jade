@@ -2,12 +2,14 @@ include scripts
 
 mixin javascriptLibraries
   script(src="/vendor/jquery/dist/jquery.min.js")
+  script(src="/vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js")
   script(src="/vendor/Chart.js/dist/Chart.min.js")
   script(src="/javascript/client.js")
 
 mixin styles
   link(rel="stylesheet", type="text/css", href="/vendor/font-lato-2-subset/css/font-lato-2.css")
   link(rel="stylesheet", type="text/css", href="/vendor/components-font-awesome/css/font-awesome.min.css")
+  link(rel="stylesheet", type="text/css", href="/vendor/perfect-scrollbar/css/perfect-scrollbar.min.css")
   link(rel="stylesheet", type="text/css", href="/stylesheet/default.css")
 
 mixin chartGlobals

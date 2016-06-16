@@ -195,11 +195,12 @@ h1 {
     }
   }
   nav {
-    height: 100%;
+    height: calc(100% - 50px);
     overflow-y: auto;
+    position: relative;
     ul {
       padding: 0;
-      margin: 0 0 50px;
+      margin: 0;
       color: $CLOUDS;
       li {
         background-color: $WET_ASPHALT;
@@ -358,4 +359,19 @@ table.metrics {
   text-align: center;
   padding: 0 0 6px;
   font-size: 13px;
+}
+
+// Customize perfect-scrollbar
+.ps-container.ps-active-y > .ps-scrollbar-y-rail:hover,
+.ps-container.ps-active-y.ps-in-scrolling > .ps-scrollbar-y-rail {
+  background-color: $MIDNIGHT_BLUE;
+}
+
+.ps-container.ps-active-y > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+  background-color: $GREEN_SEA;
+}
+
+.ps-container.ps-active-y > .ps-scrollbar-y-rail:hover > .ps-scrollbar-y,
+.ps-container.ps-active-y.ps-in-scrolling > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+  background-color: $GREEN_SEA;
 }
