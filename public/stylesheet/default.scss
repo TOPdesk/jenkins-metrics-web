@@ -289,14 +289,12 @@ footer {
   }
 }
 
-.metric-gain,
-.gain {
+.metric-gain {
   background-color: $NEPHRITIS;
 }
 
-.metric-loss,
-.loss {
-  color: $SILVER;
+.metric-loss {
+  color: $CLOUDS;
   background-color: $POMEGRANATE;
 }
 
@@ -328,7 +326,7 @@ table.metrics {
     border-bottom: 1px solid $CLOUDS;
   }
   tr.header {
-    color: $SILVER;
+    color: $CLOUDS;
     background-color: $MIDNIGHT_BLUE;
     border: none;
     &:first-child {
