@@ -92,24 +92,31 @@ body {
 .page-main {
   background-color: $CLOUDS;
   padding: 0 1em 3em;
+  margin-bottom: -5px;
+  min-height: calc(100% - 165px);
 }
 
 .page-footer {
   height: 100px;
 }
 
-.inner-top-shadow {
-  -webkit-box-shadow: inset 0 5px 5px -5px #000;
-  -moz-box-shadow: inset 0 5px 5px -5px #000;
-  box-shadow: inset 0 5px 5px -5px #000;
-}
-
 .right-shadow {
-  -webkit-box-shadow: 5px 0 5px -3px #000;
-  -moz-box-shadow: 5px 0 5px -3px #000;
-  box-shadow: 5px 0 5px -3px #000;
+  -webkit-box-shadow: 7px 0 9px -7px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 7px 0 9px -7px rgba(0, 0, 0, 0.7);
+  box-shadow: 7px 0 9px -7px rgba(0, 0, 0, 0.7);
 }
 
+.bottom-shadow {
+  -webkit-box-shadow: 0 7px 9px -7px rgba(0,0,0,0.7);
+  -moz-box-shadow: 0 7px 9px -7px rgba(0,0,0,0.7);
+  box-shadow: 0 7px 9px -7px rgba(0,0,0,0.7);
+}
+
+/*
+.inner-left-shadow {
+  box-shadow: inset 7px 0 9px -7px rgba(0, 0, 0, 0.7);
+}
+*/
 h1 {
   span {
     padding: 0 .5em;
@@ -124,6 +131,8 @@ h1 {
 #jobs {
   background-color: $MIDNIGHT_BLUE;
   overflow-y: hidden;
+  position: relative;
+  z-index: 100;
   &.collapsed {
     width: 42px;
     button#jobs-collapse {
