@@ -388,22 +388,27 @@ table.metrics {
   }
 }
 
-#content.ps-container.ps-active-y {
+#content {
   > .ps-scrollbar-y-rail {
-    &:hover {
-      background-color: $CONCRETE;
+    z-index: 100;
+  }
+  &.ps-container.ps-active-y {
+    > .ps-scrollbar-y-rail {
+      &:hover {
+        background-color: $CONCRETE;
+        > .ps-scrollbar-y {
+          background-color: $MIDNIGHT_BLUE;
+        }
+      }
       > .ps-scrollbar-y {
         background-color: $MIDNIGHT_BLUE;
       }
     }
-    > .ps-scrollbar-y {
-      background-color: $MIDNIGHT_BLUE;
-    }
-  }
-  &.ps-in-scrolling > .ps-scrollbar-y-rail {
-    background-color: $CONCRETE;
-    > .ps-scrollbar-y {
-      background-color: $MIDNIGHT_BLUE;
+    &.ps-in-scrolling > .ps-scrollbar-y-rail {
+      background-color: $CONCRETE;
+      > .ps-scrollbar-y {
+        background-color: $MIDNIGHT_BLUE;
+      }
     }
   }
 }
