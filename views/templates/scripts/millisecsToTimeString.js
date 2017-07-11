@@ -10,3 +10,7 @@ function millisecsToTimeString(millis) {
     ('00' + minutes).slice(-2) + ':' +
     ('00' + seconds).slice(-2);
 }
+
+function createLabel(tooltipItem, data) {
+  return data.datasets[tooltipItem.datasetIndex].label + ": " + millisecsToTimeString(tooltipItem.yLabel);
+}

@@ -2,4 +2,7 @@ extends _chart
 
 block chartCustomization
   include ../scripts/millisecsToTimeString.js
+  | if (!chart.options.tooltips) chart.options.tooltips = {};
+  | if (!chart.options.tooltips.callbacks) chart.options.tooltips.callbacks = {};
+  | chart.options.tooltips.callbacks.label = createLabel;
   | chart.options.scales.yAxes[0].ticks.callback = millisecsToTimeString;
